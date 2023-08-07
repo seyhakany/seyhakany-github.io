@@ -6,6 +6,7 @@ import colorVariables from "@/assets/style/variables";
 import Navigation from "./Navigation";
 import Footer from "../pages/Footer";
 import ScrollToTopFab from "./ScrollToTop";
+import ModeToggle from "./ModeToggle";
 
 const StyledRootLayoutContainer = styled("div")({
   background: colorVariables.black,
@@ -22,8 +23,9 @@ const RootLayoutContainer = ({ children }: { children: any }) => {
       <Navigation />
       <Social />
       <ScrollToTopFab />
+      <ModeToggle />
       {children}
-      <Footer />
+      {/* <Footer /> */}
     </StyledRootLayoutContainer>
   );
 };
