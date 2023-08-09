@@ -12,13 +12,13 @@ const buttons = [
     icon: <FacebookIcon />,
     label: "facebook",
     background: colorVariables.facebook,
-    link: "https://stackoverflow.com/questions/75302340/not-found-page-does-not-work-in-next-js-13",
+    link: "https://www.facebook.com/seyha.kany.1?mibextid=LQQJ4d",
   },
   {
     icon: <LinkedInIcon />,
     label: "linkedIn",
     background: colorVariables.linkedIn,
-    link: "https://stackoverflow.com/questions/75302340/not-found-page-does-not-work-in-next-js-13",
+    link: "https://www.linkedin.com/in/chheng-seyhakany-1975a814a",
   },
 ];
 
