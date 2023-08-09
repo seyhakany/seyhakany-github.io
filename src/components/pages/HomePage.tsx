@@ -5,7 +5,7 @@ import useResize from "@/hooks/use-window-resize";
 import useDebounce from "@/hooks/use-debounce";
 import { Box, Grid, Theme } from "@mui/material";
 import Image from "next/image";
-import Profile from "../../assets/images/itadori_yuji.jpg";
+import Profile from "../../assets/images/kany.jpeg";
 import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 import colorVariables from "@/assets/style/variables";
 import MacNavigation from "../layouts/MacNavigation";
@@ -71,6 +71,7 @@ const StyledHomePage = styled("div")((props) => {
         position: "relative",
         "& img": {
           borderRadius: "50%",
+          objectFit: "cover",
         },
       },
       "& .profile-container-text": {
@@ -109,7 +110,13 @@ const HomePage = () => {
       <div className="card-container" ref={cardContainerRef}>
         <div className="profile-container-image">
           <div className="profile-image">
-            <Image src={Profile} alt="profile image" width={200} height={200} />
+            <Image
+              src={Profile}
+              alt="profile image"
+              width={200}
+              height={200}
+              quality={100}
+            />
           </div>
           <CustomButton sx={{ padding: "5px 10px", cursor: "not-allowed" }}>
             Contact Me
