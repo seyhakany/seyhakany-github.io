@@ -8,6 +8,7 @@ import Image from "next/image";
 import AngularLogo from "../../assets/images/angular.png";
 import VueLogo from "../../assets/images/vue.png";
 import ReactLogo from "../../assets/images/react.png";
+import { Theme } from "@mui/material";
 
 const experiences = [
   {
@@ -46,31 +47,39 @@ const technicalSkills = [
   },
 ];
 
-const StyledContentWrapper = styled("div")({
-  display: "flex",
-  fontSize: "14px",
-  "& label": {
-    marginRight: "20px",
-    color: colorVariables.gray67,
-  },
+const StyledContentWrapper = styled("div")((props) => {
+  const mode = (props.theme as Theme).palette.mode;
+  return {
+    display: "flex",
+    fontSize: "14px",
+    "& label": {
+      marginRight: "20px",
+      color:
+        mode === "dark" ? colorVariables.gray67 : colorVariables.black,
+    },
+  };
 });
 
-const StyledTechnical = styled("div")({
-  display: "flex",
-  justifyContent: "center",
-  flexWrap: "wrap",
-  gap: 50,
-  maxWidth: "750px",
-  margin: "auto",
-  color: colorVariables.gray67,
-  "& .tech": {
-    textAlign: "center",
-  },
+const StyledTechnical = styled("div")((props) => {
+  const mode = (props.theme as Theme).palette.mode;
+  return {
+    display: "flex",
+    justifyContent: "center",
+    flexWrap: "wrap",
+    gap: 50,
+    maxWidth: "750px",
+    margin: "auto",
+    color:
+      mode === "dark" ? colorVariables.gray67 : colorVariables.black,
+    "& .tech": {
+      textAlign: "center",
+    },
+  };
 });
 
 const AboutPage = () => {
   return (
-    <div id="about">
+    <div id="about" style={{fontWeight: 600}}>
       <Title>About Me</Title>
       <p>{`I'm a frontend web developer.`}</p>
       <div>
