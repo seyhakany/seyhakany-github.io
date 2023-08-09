@@ -20,9 +20,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
     <>
-      {pathname === "/" ? (
-        <StyledCopyRight>© {currentYear}, Chheng Seyhakany</StyledCopyRight>
-      ) : null}
+      <StyledCopyRight>© {currentYear}, Chheng Seyhakany</StyledCopyRight>
     </>
   );
 };
