@@ -2,18 +2,18 @@
 import React from "react";
 import styled from "@emotion/styled";
 import Social from "./Social";
-import colorVariables from "@/assets/style/variables";
+import colorVariables, { transition } from "@/assets/style/variables";
 import Navigation from "./Navigation";
 import Footer from "../pages/Footer";
 import ScrollToTopFab from "./ScrollToTop";
+import ToggleTheme from "./ToggleTheme";
 
 const StyledRootLayoutContainer = styled("div")({
-  background: colorVariables.black,
-  color: colorVariables.white,
   height: "calc(100vh - 200px)",
   position: "relative",
   zIndex: 1,
   paddingTop: "100px",
+  transition: transition.theme,
 });
 
 const RootLayoutContainer = ({ children }: { children: any }) => {
@@ -24,6 +24,7 @@ const RootLayoutContainer = ({ children }: { children: any }) => {
       <ScrollToTopFab />
       {children}
       <Footer />
+      <ToggleTheme />
     </StyledRootLayoutContainer>
   );
 };

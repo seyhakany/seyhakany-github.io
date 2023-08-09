@@ -1,13 +1,24 @@
+import colorVariables from "@/assets/style/variables";
 import styled from "@emotion/styled";
 import { KeyboardArrowUp } from "@mui/icons-material";
-import { Box, Fab, Zoom, useScrollTrigger } from "@mui/material";
+import { Box, Fab, Theme, Zoom, useScrollTrigger } from "@mui/material";
 import { useCallback } from "react";
 
-const StyledButton = styled(Box)({
-  position: "fixed",
-  bottom: 32,
-  right: 32,
-  zIndex: 999,
+const StyledButton = styled(Box)((props) => {
+  const mode = (props.theme as Theme).palette.mode
+  return {
+    position: "fixed",
+    bottom: 32,
+    right: 32,
+    zIndex: 999,
+    "& .MuiFab-root": {
+      background: mode === "dark" ? colorVariables.light_mode : colorVariables.dark_mode,
+      color: colorVariables.white,
+      "&:hover": {
+        background: `${mode === "dark" ? colorVariables.light_mode : colorVariables.dark_mode}90`,
+      }
+    },
+  };
 });
 
 function ScrollToTopFab() {

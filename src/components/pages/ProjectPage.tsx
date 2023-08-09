@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Grid } from "@mui/material";
+import { Grid, Theme } from "@mui/material";
 import styled from "@emotion/styled";
 import ProjectA from "../../assets/images/project_a.png";
 import ProjectB from "../../assets/images/project_b.png";
@@ -9,7 +9,7 @@ import ProjectD from "../../assets/images/project_d.png";
 import Image from "next/image";
 import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 import Title from "../Title";
-import colorVariables from "@/assets/style/variables";
+import colorVariables, { transition } from "@/assets/style/variables";
 import CustomButton from "../CustomButton";
 import useResize from "@/hooks/use-window-resize";
 
@@ -40,100 +40,108 @@ const projects = [
   },
 ];
 
-const StyledProject = styled("div")({
-  "@keyframes bounce": {
-    "0%": {
-      transform: "translateY(0px) scale(1) rotate(0)",
-      transformOrigin: "center",
-    },
-    "25%": {
-      transform: "translateY(3px) scale(1.1) rotate(5deg)",
-      transformOrigin: "center",
-    },
-    "35%": {
-      transform: "translateY(5px) scale(1.3) rotate(-10deg)",
-      transformOrigin: "center",
-    },
-    "50%": {
-      transform: "translateY(3px) scale(1.2) rotate(10deg)",
-      transformOrigin: "center",
-    },
-    "70%": {
-      transform: "translateY(7px) scale(1.4) rotate(-5deg)",
-      transformOrigin: "center",
-    },
-    "85%": {
-      transform: "translateY(5px) scale(1.2) rotate(5deg)",
-      transformOrigin: "center",
-    },
-    "100%": {
-      transform: "translateY(0px) scale(1) rotate(0)",
-      transformOrigin: "center",
-    },
-  },
-  display: "flex",
-  border: `1px solid ${colorVariables.dark_charcoal}`,
-  // margin: "60px 0",
-  justifyContent: "space-between",
-  position: "relative",
-  transition: "0.1s ease-in-out all",
-  zIndex: 1,
-  "& .project-name": {
-    display: "inline-block",
-    position: "relative",
-    transformOrigin: "center",
-  },
-  "& .border": {
-    transition: "0.1s ease-in-out all",
-    transform: "translate(0px, 0px)",
-  },
-  "&:hover": {
-    "& .project-name": {
-      position: "relative",
-      animation: "bounce 5s infinite",
-    },
-    "& .img-container": {
-      transform: "scale(1.2) translate(0, 0) rotate(-20deg)",
-      transition: "0.2s ease-in-out all",
-      "& .border": {
-        transition: "0.1s ease-in-out all",
-        position: "absolute",
-        content: "' '",
-        inset: 0,
-        border: `2px solid ${colorVariables.white}`,
-        transform: "translate(-10px, -10px) rotate(20deg)",
-        zIndex: 0,
-        background: colorVariables.black
+const StyledProject = styled("div")((props) => {
+  const mode = (props.theme as Theme).palette.mode;
+  return {
+    "@keyframes bounce": {
+      "0%": {
+        transform: "translateY(0px) scale(1) rotate(0)",
+        transformOrigin: "center",
+      },
+      "25%": {
+        transform: "translateY(3px) scale(1.1) rotate(5deg)",
+        transformOrigin: "center",
+      },
+      "35%": {
+        transform: "translateY(5px) scale(1.3) rotate(-10deg)",
+        transformOrigin: "center",
+      },
+      "50%": {
+        transform: "translateY(3px) scale(1.2) rotate(10deg)",
+        transformOrigin: "center",
+      },
+      "70%": {
+        transform: "translateY(7px) scale(1.4) rotate(-5deg)",
+        transformOrigin: "center",
+      },
+      "85%": {
+        transform: "translateY(5px) scale(1.2) rotate(5deg)",
+        transformOrigin: "center",
+      },
+      "100%": {
+        transform: "translateY(0px) scale(1) rotate(0)",
+        transformOrigin: "center",
       },
     },
-  },
-  "& .img-container": {
-    transition: "0.2s ease-in-out all",
-    position: "relative",
-    width: "200px",
-    height: "200px",
-    transform: "scale(1.2) translate(-10px, -10px)",
-    transformOrigin: "bottom left",
-
-    "& img": {
-      zIndex: 1,
-      position: "relative",
-      margin: "0 !important",
-      background: colorVariables.dark_charcoal,
-      padding: "10px",
-    },
-  },
-
-  "& .year-badge": {
-    position: "absolute",
-    bottom: 0,
-    height: 25,
-    background: colorVariables.error,
-    padding: "0 15px",
     display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  },
+    border: `1px solid ${
+      mode === "dark" ? colorVariables.dark_charcoal : colorVariables.gray67
+    }`,
+    justifyContent: "space-between",
+    position: "relative",
+    transition: transition.theme,
+    zIndex: 1,
+    "& .project-name": {
+      display: "inline-block",
+      position: "relative",
+      transformOrigin: "center",
+    },
+    "& .border": {
+      transition: transition.theme,
+      transform: "translate(0px, 0px)",
+    },
+    "&:hover": {
+      "& .project-name": {
+        position: "relative",
+        animation: "bounce 5s infinite",
+      },
+      "& .img-container": {
+        transform: "scale(1.2) translate(0, 0) rotate(-20deg)",
+        transition: transition.theme,
+        "& .border": {
+          transition: transition.theme,
+          position: "absolute",
+          content: "' '",
+          inset: 0,
+          border: `2px solid ${colorVariables.warning}`,
+          transform: "translate(-10px, -10px) rotate(20deg)",
+          zIndex: 0,
+          background:
+            mode === "dark" ? colorVariables.black : colorVariables.white,
+        },
+      },
+    },
+    "& .img-container": {
+      transition: transition.theme,
+      position: "relative",
+      width: "200px",
+      height: "200px",
+      transform: "scale(1.2) translate(-10px, -10px)",
+      transformOrigin: "bottom left",
+
+      "& img": {
+        zIndex: 1,
+        position: "relative",
+        margin: "0 !important",
+        background:
+          mode === "dark"
+            ? colorVariables.dark_charcoal
+            : colorVariables.gray67,
+        padding: "10px",
+      },
+    },
+
+    "& .year-badge": {
+      position: "absolute",
+      bottom: 0,
+      height: 25,
+      background: colorVariables.error,
+      padding: "0 15px",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+    },
+  };
 });
 
 const ProjectPage = () => {

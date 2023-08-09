@@ -1,44 +1,53 @@
-import colorVariables from "@/assets/style/variables";
+"use client";
+import colorVariables, { transition } from "@/assets/style/variables";
 import styled from "@emotion/styled";
-import { Box, BoxProps } from "@mui/material";
+import { Box, BoxProps, Theme } from "@mui/material";
 import React, { ReactNode } from "react";
 
-const StyledCustomButton = styled("div")({
-  display: "inline-block",
-  cursor: "pointer",
-  transition: "0.2s all ease-in-out",
-  position: "relative",
-  background: colorVariables.black,
-  color: "transparent",
-
-  "& .custom-border": {
-    transition: "0.1s all ease-in-out",
-    position: "absolute",
-    width: "100%",
-    height: "100%",
-    inset: 0,
-    zIndex: 0,
-  },
-  "& .children": {
-    transition: "0.1s all ease-in-out",
-    inset: 0,
-    color: colorVariables.white,
-    zIndex: 1,
+const StyledCustomButton = styled("div")((props) => {
+  const mode = (props.theme as Theme).palette.mode;
+  return {
+    display: "inline-block",
+    cursor: "pointer",
+    transition: transition.theme,
     position: "relative",
-    border: `1px solid ${colorVariables.dark_charcoal}`,
-    background: colorVariables.black,
-  },
-  "&:hover": {
-    transition: "0.1s all ease-in-out",
+
     "& .custom-border": {
-      transition: "0.1s all ease-in-out",
-      background: colorVariables.dark_charcoal,
+      transition: transition.theme,
+      position: "absolute",
+      width: "100%",
+      height: "100%",
+      inset: 0,
+      zIndex: 0,
     },
     "& .children": {
-      transition: "0.1s all ease-in-out",
-      transform: "translate(-5px, -5px)",
+      fontWeight: 600,
+      transition: transition.theme,
+      inset: 0,
+      color: mode === "dark" ? colorVariables.white : colorVariables.black,
+      zIndex: 1,
+      position: "relative",
+      border: `1px solid ${
+        mode === "dark" ? colorVariables.dark_charcoal : colorVariables.gray67
+      }`,
+      // background: colorVariables.black,
+      background: mode === "dark" ? colorVariables.black : colorVariables.white,
     },
-  },
+    "&:hover": {
+      transition: transition.theme,
+      "& .custom-border": {
+        transition: transition.theme,
+        background:
+          mode === "dark"
+            ? colorVariables.dark_charcoal
+            : colorVariables.gray67,
+      },
+      "& .children": {
+        transition: transition.theme,
+        transform: "translate(-5px, -5px)",
+      },
+    },
+  };
 });
 
 const CustomButton = ({

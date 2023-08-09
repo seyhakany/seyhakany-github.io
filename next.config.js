@@ -4,7 +4,8 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
-  output: "export",
+  // !!! for production only
+  // output: "export",
 };
 
 module.exports = nextConfig;

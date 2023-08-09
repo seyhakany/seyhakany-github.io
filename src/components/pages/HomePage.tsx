@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from "react";
 import styled from "@emotion/styled";
 import useResize from "@/hooks/use-window-resize";
 import useDebounce from "@/hooks/use-debounce";
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, Theme } from "@mui/material";
 import Image from "next/image";
 import Profile from "../../assets/images/itadori_yuji.jpg";
 import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
@@ -19,59 +19,65 @@ const Graduate_Font = Graduate({
   subsets: ["latin"],
 });
 
-const StyledHomePage = styled("div")({
-  background: colorVariables.dark_charcoal,
-  position: "relative",
-  border: `2px solid ${colorVariables.dark_charcoal}`,
-  maxWidth: "100%",
-  // minHeight: "100%",
-  height: "100vh",
-  maxHeight: "700px",
-  margin: "auto",
-  borderRadius: 15,
-  overflow: "hidden",
-  zIndex: 1,
-  "& .bg-skew": {
-    position: "absolute",
-    width: "60%",
-    height: "100%",
-    inset: 0,
-    background: colorVariables.black,
-    transform: "skew(50deg)",
-    transformOrigin: "bottom left",
-    transition: "0.2s ease",
-    zIndex: 0,
-  },
-  "& .card-container": {
-    position: "absolute",
-    width: "100%",
-    height: "100%",
-    inset: 0,
-    padding: 10,
-    display: "flex",
-
-    "& .profile-container-image, & .profile-container-text": {
-      width: "50%",
+const StyledHomePage = styled("div")((props) => {
+  const mode = (props.theme as Theme).palette.mode;
+  return {
+    background:
+      mode === "dark" ? colorVariables.dark_charcoal : colorVariables.gray67,
+    position: "relative",
+    border: `1px solid ${
+      mode === "dark" ? colorVariables.dark_charcoal : colorVariables.gray67
+    }`,
+    maxWidth: "100%",
+    // minHeight: "100%",
+    height: "100vh",
+    maxHeight: "700px",
+    margin: "auto",
+    borderRadius: 15,
+    overflow: "hidden",
+    zIndex: 1,
+    "& .bg-skew": {
+      position: "absolute",
+      width: "60%",
       height: "100%",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      flexDirection: "column",
-      padding: 20,
-      textAlign: "center",
-      gap: 20,
-      margin: "auto",
+      inset: 0,
+      background: mode === "dark" ? colorVariables.black : colorVariables.white,
+      transform: "skew(50deg)",
+      transformOrigin: "bottom left",
+      transition: "0.2s ease",
+      zIndex: 0,
     },
-    "& .profile-container-image .profile-image": {
-      position: "relative",
-      "& img": {
-        borderRadius: "50%",
+    "& .card-container": {
+      position: "absolute",
+      width: "100%",
+      height: "100%",
+      inset: 0,
+      padding: 10,
+      display: "flex",
+
+      "& .profile-container-image, & .profile-container-text": {
+        width: "50%",
+        height: "100%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
+        padding: 20,
+        textAlign: "center",
+        gap: 20,
+        margin: "auto",
+      },
+      "& .profile-container-image .profile-image": {
+        position: "relative",
+        "& img": {
+          borderRadius: "50%",
+        },
+      },
+      "& .profile-container-text": {
+        fontSize: 30,
       },
     },
-    "& .profile-container-text": {
-      fontSize: 30,
-    },
-  },
+  };
 });
 
 const HomePage = () => {
@@ -105,7 +111,9 @@ const HomePage = () => {
           <div className="profile-image">
             <Image src={Profile} alt="profile image" width={200} height={200} />
           </div>
-          <CustomButton sx={{ padding: "5px 10px", cursor: "not-allowed" }}>Contact Me</CustomButton>
+          <CustomButton sx={{ padding: "5px 10px", cursor: "not-allowed" }}>
+            Contact Me
+          </CustomButton>
         </div>
         <div className="profile-container-text">
           <RoughNotationGroup show>
