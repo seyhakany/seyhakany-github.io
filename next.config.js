@@ -5,7 +5,7 @@ const nextConfig = {
     styledComponents: true,
   },
   // !!! for production only
-  // output: "export",
+  output: "export",
 };
 
 module.exports = nextConfig;
