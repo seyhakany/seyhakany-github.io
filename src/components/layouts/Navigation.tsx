@@ -70,28 +70,26 @@ const Navigation = () => {
 
   return (
     <>
-      {pathname === "/" ? (
-        <StyledNavigation>
-          {navigation?.map((n, index) => {
-            return (
-              <Box
-                key={`navigation_${index}_fixed`}
-                className="navigation-item"
-                sx={{
-                  "&:hover": {
-                    background: `${n?.background} !important`,
-                  },
-                }}
-                component={"a"}
-                href={`#${n?.link}`}
-              >
-                <span>{n?.icon}</span>
-                <span>{n?.label}</span>
-              </Box>
-            );
-          })}
-        </StyledNavigation>
-      ) : null}
+      <StyledNavigation>
+        {navigation?.map((n, index) => {
+          return (
+            <Box
+              key={`navigation_${index}_fixed`}
+              className="navigation-item"
+              sx={{
+                "&:hover": {
+                  background: `${n?.background} !important`,
+                },
+              }}
+              component={"a"}
+              href={`#${n?.link}`}
+            >
+              <span>{n?.icon}</span>
+              <span>{n?.label}</span>
+            </Box>
+          );
+        })}
+      </StyledNavigation>
     </>
   );
 };
