@@ -12,17 +12,19 @@ import { Theme } from "@mui/material";
 
 const experiences = [
   {
-    position: "Cleaner manager",
-    date: "DEC 20, 2018",
-    company: "Company A",
+    position: `Intern, 
+    Junior Web Developer, 
+    Senior Web Developer (present)`,
+    date: "Sep 2019 - Present",
+    company: "Pathmazing Inc",
     detail: ["coding", "testing", "deploying"],
   },
 ];
 
 const educations = [
   {
-    school: "School A",
-    date: "DEC 20, 2000",
+    school: "Bachelor of Computer Science, Royal University of Phnom Penh",
+    date: "2014 - 20218",
   },
 ];
 
@@ -30,20 +32,23 @@ const technicalSkills = [
   {
     name: "Angular (6)",
     image: AngularLogo,
-    level: "low",
+    level: "LOW",
     description: "maintenance existing web application",
+    color: colorVariables.error,
   },
   {
     name: "Vue (2 , nuxt-js)",
     image: VueLogo,
-    level: "medium",
+    level: "MEDIUM",
     description: "working with US project",
+    color: colorVariables.warning,
   },
   {
     name: "React (16+, next-js)",
     image: ReactLogo,
-    level: "high",
+    level: "HIGH",
     description: "working with a lot of projects",
+    color: colorVariables.success,
   },
 ];
 
@@ -54,8 +59,7 @@ const StyledContentWrapper = styled("div")((props) => {
     fontSize: "14px",
     "& label": {
       marginRight: "20px",
-      color:
-        mode === "dark" ? colorVariables.gray67 : colorVariables.black,
+      color: mode === "dark" ? colorVariables.gray67 : colorVariables.black,
     },
   };
 });
@@ -69,8 +73,7 @@ const StyledTechnical = styled("div")((props) => {
     gap: 50,
     maxWidth: "750px",
     margin: "auto",
-    color:
-      mode === "dark" ? colorVariables.gray67 : colorVariables.black,
+    color: mode === "dark" ? colorVariables.gray67 : colorVariables.black,
     "& .tech": {
       textAlign: "center",
     },
@@ -79,9 +82,9 @@ const StyledTechnical = styled("div")((props) => {
 
 const AboutPage = () => {
   return (
-    <div id="about" style={{fontWeight: 600}}>
+    <div id="about" style={{ fontWeight: 600 }}>
       <Title>About Me</Title>
-      <p>{`I'm a frontend web developer.`}</p>
+      <p>{`Meticulous Web Developer with over 3 years of front-end experience and passion for responsive website design.`}</p>
       <div>
         <div>Education:</div>
         <div style={{ marginBottom: "10px" }}>
@@ -117,7 +120,12 @@ const AboutPage = () => {
               <div className="tech" key={`tech_${index}`}>
                 <Image src={t?.image} width={100} height={90} alt={t?.name} />
                 <div>{t?.name}</div>
-                <div>{t?.level}</div>
+                <div>
+                  <span>Level: </span>
+                  <span style={{ color: t?.color, fontWeight: "bold" }}>
+                    {t?.level}
+                  </span>
+                </div>
                 <div>{t?.description}</div>
               </div>
             );

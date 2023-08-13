@@ -16,15 +16,16 @@ import useResize from "@/hooks/use-window-resize";
 const projects = [
   {
     // name: "Project A",
-    name: "GMS (Game Management System) and TMS (Ticketing Management System)",
+    name: "GMS and TMS",
     img: ProjectA,
-    description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
+    description: `GMS (Game Management System): this project used to manage the entry by name, entry by number of 11 countries who participate in the Seagame 32nd.
+    Catering, Transportation, Card Control, Accreditation registration, Arrival Departure and more. TMS (Ticketing Management System): this project used to manage ticket for all sports in Seagame 32nd.`,
     year: "2023",
   },
   {
     name: "BQuest",
     img: ProjectB,
-    description: `BQuestTM is A New Do-It-Yourself Estate Planning Tool That is A Digital Way To Ensure The Things You Value Will Legally Make It Into The Right Hands After You’re Gone. With BQuest, You Can Catalog Your Possessions Into A Secure Digital Vault Which Automatically Updates Your Estate Summary, Your Letter Of Wishes, Your Will, Or Your Declaration Of Trust. Update It At Anytime.`,
+    description: `BQuest is A New Do-It-Yourself Estate Planning Tool That is A Digital Way To Ensure The Things You Value Will Legally Make It Into The Right Hands After You’re Gone. With BQuest, You Can Catalog Your Possessions Into A Secure Digital Vault Which Automatically Updates Your Estate Summary, Your Letter Of Wishes, Your Will, Or Your Declaration Of Trust. Update It At Anytime.`,
     year: "2022",
   },
   {
