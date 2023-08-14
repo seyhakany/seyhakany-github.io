@@ -4,7 +4,7 @@ import ProjectPage from "@/components/pages/ProjectPage";
 
 export const metadata = {
   title: "Home | Chheng Seyhakany",
-  description: "this page was about ...",
+  description: "Meticulous Web Developer with over 4 years of front-end experience and passion for responsive website design.",
 };
 
 export default function Home() {
