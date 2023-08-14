@@ -6,12 +6,14 @@ import useDebounce from "@/hooks/use-debounce";
 import { Box, Grid, Theme } from "@mui/material";
 import Image from "next/image";
 import Profile from "../../assets/images/kany.jpeg";
+import Resume from "../../assets/files/resume.pdf";
 import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 import colorVariables from "@/assets/style/variables";
 import MacNavigation from "../layouts/MacNavigation";
 
 import { Graduate } from "@next/font/google";
 import CustomButton from "../CustomButton";
+import Link from "next/link";
 
 const Graduate_Font = Graduate({
   weight: "400",
@@ -118,9 +120,9 @@ const HomePage = () => {
               quality={100}
             />
           </div>
-          <CustomButton sx={{ padding: "5px 10px", cursor: "not-allowed" }}>
-            Contact Me
-          </CustomButton>
+          <a href={Resume} target="_blank">
+            <CustomButton sx={{ padding: "5px 10px" }}>Resume</CustomButton>
+          </a>
         </div>
         <div className="profile-container-text">
           <RoughNotationGroup show>
