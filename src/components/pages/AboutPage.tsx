@@ -84,7 +84,7 @@ const AboutPage = () => {
   return (
     <div id="about" style={{ fontWeight: 600 }}>
       <Title>About Me</Title>
-      <p>{`Meticulous Web Developer with over 3 years of front-end experience and passion for responsive website design.`}</p>
+      <p>{`Meticulous Web Developer with over 4 years of front-end experience and passion for responsive website design.`}</p>
       <div>
         <div>Education:</div>
         <div style={{ marginBottom: "10px" }}>
