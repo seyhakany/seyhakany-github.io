@@ -121,7 +121,7 @@ const HomePage = () => {
             />
           </div>
           <a
-            href="https://github.com/seyhakany/seyhakany-github.io/resume.pdf"
+            href="https://seyhakany.github.io/seyhakany-github.io/src/assets/files/resume.pdf"
             target="_blank"
           >
             <CustomButton sx={{ padding: "5px 10px" }}>Resume</CustomButton>
