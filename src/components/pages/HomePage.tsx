@@ -6,7 +6,7 @@ import useDebounce from "@/hooks/use-debounce";
 import { Box, Grid, Theme } from "@mui/material";
 import Image from "next/image";
 import Profile from "../../assets/images/kany.jpeg";
-import Resume from "../../assets/files/resume.pdf";
+// import Resume from "../../assets/files/resume.pdf";
 import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 import colorVariables from "@/assets/style/variables";
 import MacNavigation from "../layouts/MacNavigation";
