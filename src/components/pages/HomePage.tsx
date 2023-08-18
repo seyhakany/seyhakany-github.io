@@ -120,7 +120,10 @@ const HomePage = () => {
               quality={100}
             />
           </div>
-          <a href="/pdfs/resume.pdf" target="_blank">
+          <a
+            href="https://github.com/seyhakany/seyhakany-github.io/resume.pdf"
+            target="_blank"
+          >
             <CustomButton sx={{ padding: "5px 10px" }}>Resume</CustomButton>
           </a>
         </div>
