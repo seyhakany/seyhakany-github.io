@@ -1,5 +1,5 @@
 "use client";
-import colorVariables from "@/assets/style/variables";
+import colorVariables from "@/style/variables";
 import styled from "@emotion/styled";
 import { usePathname } from "next/navigation";
 import React from "react";

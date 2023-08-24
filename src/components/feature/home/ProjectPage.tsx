@@ -2,41 +2,41 @@
 import React from "react";
 import { Grid, Theme } from "@mui/material";
 import styled from "@emotion/styled";
-import ProjectA from "../../assets/images/project_a.png";
-import ProjectB from "../../assets/images/project_b.png";
-import ProjectC from "../../assets/images/project_c.png";
-import ProjectD from "../../assets/images/project_d.png";
+import SEAGAME from "/public/images/projects/SEAGAME.png";
+import BQuest from "/public/images/projects/bquest.svg";
+import KhmerCare from "/public/images/projects/khmer-care.svg";
+import Stars from "/public/images/projects/stars.png";
 import Image from "next/image";
 import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
-import Title from "../Title";
-import colorVariables, { transition } from "@/assets/style/variables";
-import CustomButton from "../CustomButton";
+import colorVariables, { transition } from "@/style/variables";
 import useResize from "@/hooks/use-window-resize";
+import CustomButton from "@/components/common/CustomButton";
+import Title from "@/components/common/Title";
 
 const projects = [
   {
     // name: "Project A",
     name: "GMS and TMS",
-    img: ProjectA,
+    img: SEAGAME,
     description: `GMS (Game Management System): this project used to manage the entry by name, entry by number of 11 countries who participate in the Seagame 32nd.
     Catering, Transportation, Card Control, Accreditation registration, Arrival Departure and more. TMS (Ticketing Management System): this project used to manage ticket for all sports in Seagame 32nd.`,
     year: "2023",
   },
   {
     name: "BQuest",
-    img: ProjectB,
+    img: BQuest,
     description: `BQuest is A New Do-It-Yourself Estate Planning Tool That is A Digital Way To Ensure The Things You Value Will Legally Make It Into The Right Hands After You’re Gone. With BQuest, You Can Catalog Your Possessions Into A Secure Digital Vault Which Automatically Updates Your Estate Summary, Your Letter Of Wishes, Your Will, Or Your Declaration Of Trust. Update It At Anytime.`,
     year: "2022",
   },
   {
     name: "KhmerCare",
-    img: ProjectC,
+    img: KhmerCare,
     description: `Cambodia's first crowdfunding platform! Help support local causes and the people you love from near and far. KhmerCare is a trusted and fully transparent system created to simplify making an immediate impact on people's lives.`,
     year: "2022",
   },
   {
     name: "Stars",
-    img: ProjectD,
+    img: Stars,
     description: `Is an HR tool that increases the engagement level of employees through timely recognition by giving out rewards. This reward​ program is intended to recognize and motivate staff by awarding "Stars"​similar to any loyalty​ program. These​ "Stars" are typically awarded by managers, however, given its flexibility, other staff members may award “Stars” as well - designed to mimic a 360-degree feedback mechanism. Staff members may use their earned or rewarded "Stars" to bid in an auction or redeem rewards via an integrated catalog of prizes.`,
     year: "2019",
   },
@@ -181,6 +181,9 @@ const ProjectPage = () => {
                           alt={project?.name}
                           width={180}
                           height={180}
+                          style={{
+                            objectFit: "contain",
+                          }}
                         />
                       </div>
                       <div

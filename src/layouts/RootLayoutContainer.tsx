@@ -2,11 +2,11 @@
 import React from "react";
 import styled from "@emotion/styled";
 import Social from "./Social";
-import colorVariables, { transition } from "@/assets/style/variables";
+import colorVariables, { transition } from "@/style/variables";
 import Navigation from "./Navigation";
-import Footer from "../pages/Footer";
 import ScrollToTopFab from "./ScrollToTop";
 import ToggleTheme from "./ToggleTheme";
+import Footer from "@/components/feature/home/Footer";
 
 const StyledRootLayoutContainer = styled("div")({
   height: "calc(100vh - 200px)",

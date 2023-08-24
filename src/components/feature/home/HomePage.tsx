@@ -2,18 +2,15 @@
 import React, { useEffect, useRef } from "react";
 import styled from "@emotion/styled";
 import useResize from "@/hooks/use-window-resize";
-import useDebounce from "@/hooks/use-debounce";
-import { Box, Grid, Theme } from "@mui/material";
+import { Theme } from "@mui/material";
 import Image from "next/image";
-import Profile from "../../assets/images/kany.jpeg";
-// import Resume from "../../assets/files/resume.pdf";
+import Profile from "/public/images/profile/kany.jpeg";
 import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
-import colorVariables from "@/assets/style/variables";
-import MacNavigation from "../layouts/MacNavigation";
+import colorVariables from "@/style/variables";
 
 import { Graduate } from "@next/font/google";
-import CustomButton from "../CustomButton";
-import Link from "next/link";
+import MacNavigation from "@/layouts/MacNavigation";
+import CustomButton from "@/components/common/CustomButton";
 
 const Graduate_Font = Graduate({
   weight: "400",
@@ -31,7 +28,6 @@ const StyledHomePage = styled("div")((props) => {
       mode === "dark" ? colorVariables.dark_charcoal : colorVariables.gray67
     }`,
     maxWidth: "100%",
-    // minHeight: "100%",
     height: "100vh",
     maxHeight: "700px",
     margin: "auto",

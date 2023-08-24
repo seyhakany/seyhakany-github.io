@@ -1,14 +1,14 @@
 "use client";
 import React from "react";
-import Title from "../Title";
 import styled from "@emotion/styled";
-import colorVariables from "@/assets/style/variables";
+import colorVariables from "@/style/variables";
 import Image from "next/image";
 
-import AngularLogo from "../../assets/images/angular.png";
-import VueLogo from "../../assets/images/vue.png";
-import ReactLogo from "../../assets/images/react.png";
+import AngularLogo from "/public/images/tech/angular.png";
+import VueLogo from "/public/images/tech/vue.png";
+import ReactLogo from "/public/images/tech/react.png";
 import { Theme } from "@mui/material";
+import Title from "@/components/common/Title";
 
 const experiences = [
   {
@@ -84,7 +84,7 @@ const AboutPage = () => {
   return (
     <div id="about" style={{ fontWeight: 600 }}>
       <Title>About Me</Title>
-      <p>{`Meticulous Web Developer with over 4 years of front-end experience and passion for responsive website design.`}</p>
+      <p>{`Meticulous Web Developer with over 5 years of front-end experience and passion for responsive website design.`}</p>
       <div>
         <div>Education:</div>
         <div style={{ marginBottom: "10px" }}>

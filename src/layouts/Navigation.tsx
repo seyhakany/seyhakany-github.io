@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import styled from "@emotion/styled";
 import { navigation } from "./data";
 import Box from "@mui/material/Box";
-import colorVariables from "@/assets/style/variables";
+import colorVariables from "@/style/variables";
 import {
   usePathname,
   useRouter,

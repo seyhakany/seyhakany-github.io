@@ -1,5 +1,5 @@
-import "../assets/style/index.scss";
-import RootLayoutContainer from "@/components/layouts/RootLayoutContainer";
+import "../style/index.scss";
+import RootLayoutContainer from "@/layouts/RootLayoutContainer";
 import { Niramit } from "@next/font/google";
 import { Box, Container, CssBaseline } from "@mui/material";
 import {

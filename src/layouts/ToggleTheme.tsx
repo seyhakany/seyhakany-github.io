@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "@/providers/theme";
 import { Switch, styled, useTheme } from "@mui/material";
-import colorVariables from "@/assets/style/variables";
+import colorVariables from "@/style/variables";
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -9,7 +9,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   padding: 7,
 
   // !!! positioning
-  position: 'absolute',
+  position: "absolute",
   top: 20,
   right: 20,
 
@@ -35,7 +35,10 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     },
   },
   "& .MuiSwitch-thumb": {
-    backgroundColor: theme.palette.mode === "dark" ? colorVariables.light_mode : colorVariables.dark_mode,
+    backgroundColor:
+      theme.palette.mode === "dark"
+        ? colorVariables.light_mode
+        : colorVariables.dark_mode,
     width: 32,
     height: 32,
     "&:before": {
@@ -54,7 +57,10 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   },
   "& .MuiSwitch-track": {
     opacity: 1,
-    backgroundColor: theme.palette.mode === "dark" ? colorVariables.dark_charcoal : colorVariables.gray67,
+    backgroundColor:
+      theme.palette.mode === "dark"
+        ? colorVariables.dark_charcoal
+        : colorVariables.gray67,
     borderRadius: 20 / 2,
   },
 }));

@@ -3,7 +3,7 @@ import React from "react";
 import IconButton from "@mui/material/IconButton";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import colorVariables, { transition } from "@/assets/style/variables";
+import colorVariables, { transition } from "@/style/variables";
 import Box from "@mui/material/Box";
 import { Theme, useTheme } from "@mui/material";
 
@@ -23,16 +23,20 @@ const buttons = [
 ];
 
 const StyledSocial = styled("div")((props) => {
-  const mode = (props.theme as Theme).palette.mode
+  const mode = (props.theme as Theme).palette.mode;
   return {
     "@keyframes borderRipple": {
       from: {
-        border: `1px solid ${mode === "dark" ? colorVariables.gray67 : colorVariables.dark_charcoal}`,
+        border: `1px solid ${
+          mode === "dark" ? colorVariables.gray67 : colorVariables.dark_charcoal
+        }`,
         opacity: 1,
         transform: "scale(0)",
       },
       to: {
-        border: `1px solid ${mode === "dark" ? colorVariables.gray67 : colorVariables.dark_charcoal}`,
+        border: `1px solid ${
+          mode === "dark" ? colorVariables.gray67 : colorVariables.dark_charcoal
+        }`,
         opacity: 0,
         transform: "scale(35)",
       },

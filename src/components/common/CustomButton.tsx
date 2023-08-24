@@ -1,5 +1,5 @@
 "use client";
-import colorVariables, { transition } from "@/assets/style/variables";
+import colorVariables, { transition } from "@/style/variables";
 import styled from "@emotion/styled";
 import { Box, BoxProps, Theme } from "@mui/material";
 import React, { ReactNode } from "react";
