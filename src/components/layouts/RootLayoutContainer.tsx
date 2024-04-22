@@ -7,6 +7,7 @@ import Navigation from "./Navigation";
 import Footer from "../pages/Footer";
 import ScrollToTopFab from "./ScrollToTop";
 import ModeToggle from "./ModeToggle";
+import ComingSoonHeader from "./ComingSoonHeader";
 
 const StyledRootLayoutContainer = styled("div")({
   background: colorVariables.black,
@@ -19,14 +20,17 @@ const StyledRootLayoutContainer = styled("div")({
 
 const RootLayoutContainer = ({ children }: { children: any }) => {
   return (
-    <StyledRootLayoutContainer>
-      <Navigation />
-      <Social />
-      <ScrollToTopFab />
-      <ModeToggle />
-      {children}
-      {/* <Footer /> */}
-    </StyledRootLayoutContainer>
+    <>
+      <ComingSoonHeader />
+      <StyledRootLayoutContainer>
+        <Navigation />
+        <Social />
+        <ScrollToTopFab />
+        <ModeToggle />
+        {children}
+        {/* <Footer /> */}
+      </StyledRootLayoutContainer>
+    </>
   );
 };
 

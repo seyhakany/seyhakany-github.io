@@ -10,9 +10,9 @@ export const metadata = {
 export default function Home() {
   return (
     <>
-      {/* <HomePage /> */}
-      {/* <ProjectPage /> */}
-      {/* <AboutPage /> */}
+      <HomePage />
+      <ProjectPage />
+      <AboutPage />
     </>
   );
 }
