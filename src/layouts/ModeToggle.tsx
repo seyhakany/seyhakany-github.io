@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import { IconButton } from "@mui/material";
 import colorVariables from "@/style/variables";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
+import { ThemeContext } from "@/providers/theme";
 
 const StyledModeToggle = styled(IconButton)({
   position: "absolute",
@@ -20,10 +21,11 @@ const StyledModeToggle = styled(IconButton)({
 });
 
 const ModeToggle = () => {
-  const [mode, setMode] = useState("dark");
+  const themeContext = useContext(ThemeContext);
+  
   return (
-    <StyledModeToggle>
-      <DarkModeIcon />
+    <StyledModeToggle onClick={themeContext.setTheme}>
+      {themeContext.theme === 'dark' ? <LightModeIcon/> :  <DarkModeIcon  />}
     </StyledModeToggle>
   );
 };
