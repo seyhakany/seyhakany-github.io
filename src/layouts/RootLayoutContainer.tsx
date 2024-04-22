@@ -5,8 +5,8 @@ import Social from "./Social";
 import colorVariables, { transition } from "@/style/variables";
 import Navigation from "./Navigation";
 import ScrollToTopFab from "./ScrollToTop";
-import ToggleTheme from "./ToggleTheme";
-import Footer from "@/components/feature/home/Footer";
+import ModeToggle from "./ModeToggle";
+import ComingSoonHeader from "./ComingSoonHeader";
 
 const StyledRootLayoutContainer = styled("div")({
   height: "calc(100vh - 200px)",
@@ -18,14 +18,17 @@ const StyledRootLayoutContainer = styled("div")({
 
 const RootLayoutContainer = ({ children }: { children: any }) => {
   return (
-    <StyledRootLayoutContainer>
-      <Navigation />
-      <Social />
-      <ScrollToTopFab />
-      {children}
-      <Footer />
-      <ToggleTheme />
-    </StyledRootLayoutContainer>
+    <>
+      <ComingSoonHeader />
+      <StyledRootLayoutContainer>
+        <Navigation />
+        <Social />
+        <ScrollToTopFab />
+        <ModeToggle />
+        {children}
+        {/* <Footer /> */}
+      </StyledRootLayoutContainer>
+    </>
   );
 };
 

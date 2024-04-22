@@ -3,9 +3,8 @@ import HomePage from "@/components/feature/home/HomePage";
 import ProjectPage from "@/components/feature/home/ProjectPage";
 
 export const metadata = {
-  title: "Home | Chheng Seyhakany",
-  description:
-    "Meticulous Web Developer with over 5 years of front-end experience and passion for responsive website design.",
+  title: "Portfolio | Chheng Seyhakany",
+  description: "this page was about ...",
 };
 
 export default function Home() {
