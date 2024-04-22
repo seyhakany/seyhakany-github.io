@@ -1,10 +1,9 @@
-import styled from "@emotion/styled";
 import React, { useState } from "react";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
-import CustomButton from "../CustomButton";
 import { IconButton } from "@mui/material";
 import colorVariables from "@/style/variables";
+import styled from "styled-components";
 
 const StyledModeToggle = styled(IconButton)({
   position: "absolute",
