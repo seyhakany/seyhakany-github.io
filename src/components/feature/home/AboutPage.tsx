@@ -1,27 +1,30 @@
 "use client";
 import React from "react";
-import Title from "../Title";
 import styled from "@emotion/styled";
-import colorVariables from "@/assets/style/variables";
+import colorVariables from "@/style/variables";
 import Image from "next/image";
 
-import AngularLogo from "../../assets/images/angular.png";
-import VueLogo from "../../assets/images/vue.png";
-import ReactLogo from "../../assets/images/react.png";
+import AngularLogo from "/public/images/tech/angular.png";
+import VueLogo from "/public/images/tech/vue.png";
+import ReactLogo from "/public/images/tech/react.png";
+import { Theme } from "@mui/material";
+import Title from "@/components/common/Title";
 
 const experiences = [
   {
-    position: "Cleaner manager",
-    date: "DEC 20, 2018",
-    company: "Company A",
+    position: `Intern, 
+    Junior Web Developer, 
+    Senior Web Developer (present)`,
+    date: "Sep 2019 - Present",
+    company: "Pathmazing Inc",
     detail: ["coding", "testing", "deploying"],
   },
 ];
 
 const educations = [
   {
-    school: "School A",
-    date: "DEC 20, 2000",
+    school: "Bachelor of Computer Science, Royal University of Phnom Penh",
+    date: "2014 - 20218",
   },
 ];
 
@@ -29,50 +32,59 @@ const technicalSkills = [
   {
     name: "Angular (6)",
     image: AngularLogo,
-    level: "low",
+    level: "LOW",
     description: "maintenance existing web application",
+    color: colorVariables.error,
   },
   {
     name: "Vue (2 , nuxt-js)",
     image: VueLogo,
-    level: "medium",
+    level: "MEDIUM",
     description: "working with US project",
+    color: colorVariables.warning,
   },
   {
     name: "React (16+, next-js)",
     image: ReactLogo,
-    level: "high",
+    level: "HIGH",
     description: "working with a lot of projects",
+    color: colorVariables.success,
   },
 ];
 
-const StyledContentWrapper = styled("div")({
-  display: "flex",
-  fontSize: "14px",
-  "& label": {
-    marginRight: "20px",
-    color: colorVariables.gray67,
-  },
+const StyledContentWrapper = styled("div")((props) => {
+  const mode = (props.theme as Theme).palette.mode;
+  return {
+    display: "flex",
+    fontSize: "14px",
+    "& label": {
+      marginRight: "20px",
+      color: mode === "dark" ? colorVariables.gray67 : colorVariables.black,
+    },
+  };
 });
 
-const StyledTechnical = styled("div")({
-  display: "flex",
-  justifyContent: "center",
-  flexWrap: "wrap",
-  gap: 50,
-  maxWidth: "750px",
-  margin: "auto",
-  color: colorVariables.gray67,
-  "& .tech": {
-    textAlign: "center",
-  },
+const StyledTechnical = styled("div")((props) => {
+  const mode = (props.theme as Theme).palette.mode;
+  return {
+    display: "flex",
+    justifyContent: "center",
+    flexWrap: "wrap",
+    gap: 50,
+    maxWidth: "750px",
+    margin: "auto",
+    color: mode === "dark" ? colorVariables.gray67 : colorVariables.black,
+    "& .tech": {
+      textAlign: "center",
+    },
+  };
 });
 
 const AboutPage = () => {
   return (
-    <div id="about">
+    <div id="about" style={{ fontWeight: 600 }}>
       <Title>About Me</Title>
-      <p>{`I'm a frontend web developer.`}</p>
+      <p>{`Meticulous Web Developer with over 5 years of front-end experience and passion for responsive website design.`}</p>
       <div>
         <div>Education:</div>
         <div style={{ marginBottom: "10px" }}>
@@ -108,7 +120,12 @@ const AboutPage = () => {
               <div className="tech" key={`tech_${index}`}>
                 <Image src={t?.image} width={100} height={90} alt={t?.name} />
                 <div>{t?.name}</div>
-                <div>{t?.level}</div>
+                <div>
+                  <span>Level: </span>
+                  <span style={{ color: t?.color, fontWeight: "bold" }}>
+                    {t?.level}
+                  </span>
+                </div>
                 <div>{t?.description}</div>
               </div>
             );

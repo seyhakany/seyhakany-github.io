@@ -1,6 +1,6 @@
-import HomePage from "@/components/pages/HomePage";
-import AboutPage from "@/components/pages/AboutPage";
-import ProjectPage from "@/components/pages/ProjectPage";
+import AboutPage from "@/components/feature/home/AboutPage";
+import HomePage from "@/components/feature/home/HomePage";
+import ProjectPage from "@/components/feature/home/ProjectPage";
 
 export const metadata = {
   title: "Portfolio | Chheng Seyhakany",

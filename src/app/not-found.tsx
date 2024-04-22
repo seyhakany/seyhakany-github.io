@@ -2,7 +2,7 @@
 import styled from "@emotion/styled";
 import React from "react";
 import { Press_Start_2P } from "@next/font/google";
-import CustomButton from "@/components/CustomButton";
+import CustomButton from "@/components/common/CustomButton";
 import { useRouter } from "next/navigation";
 
 const pressStartP2Font = Press_Start_2P({

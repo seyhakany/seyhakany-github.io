@@ -4,7 +4,7 @@ import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import CustomButton from "../CustomButton";
 import { IconButton } from "@mui/material";
-import colorVariables from "@/assets/style/variables";
+import colorVariables from "@/style/variables";
 
 const StyledModeToggle = styled(IconButton)({
   position: "absolute",

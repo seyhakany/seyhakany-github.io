@@ -1,12 +1,13 @@
-import "../assets/style/index.scss";
-import RootLayoutContainer from "@/components/layouts/RootLayoutContainer";
+import "../style/index.scss";
+import RootLayoutContainer from "@/layouts/RootLayoutContainer";
 import { Niramit } from "@next/font/google";
-import { Container } from "@mui/material";
+import { Box, Container, CssBaseline } from "@mui/material";
 import {
   useRouter,
   useSelectedLayoutSegment,
   useSelectedLayoutSegments,
 } from "next/navigation";
+import ThemeContextProvider from "@/providers/theme";
 
 const Niramit_Font = Niramit({
   weight: "200",
@@ -27,11 +28,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={Niramit_Font.className}>
-        <RootLayoutContainer>
-          <Container sx={{ position: "relative" }}>
-            <div>{children}</div>
-          </Container>
-        </RootLayoutContainer>
+        <ThemeContextProvider>
+          <Box>
+            <CssBaseline />
+            <RootLayoutContainer>
+              <Container sx={{ position: "relative" }}>
+                <div>{children}</div>
+              </Container>
+            </RootLayoutContainer>
+          </Box>
+        </ThemeContextProvider>
       </body>
     </html>
   );

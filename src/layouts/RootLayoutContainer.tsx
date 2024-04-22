@@ -2,20 +2,18 @@
 import React from "react";
 import styled from "@emotion/styled";
 import Social from "./Social";
-import colorVariables from "@/assets/style/variables";
+import colorVariables, { transition } from "@/style/variables";
 import Navigation from "./Navigation";
-import Footer from "../pages/Footer";
 import ScrollToTopFab from "./ScrollToTop";
 import ModeToggle from "./ModeToggle";
 import ComingSoonHeader from "./ComingSoonHeader";
 
 const StyledRootLayoutContainer = styled("div")({
-  background: colorVariables.black,
-  color: colorVariables.white,
   height: "calc(100vh - 200px)",
   position: "relative",
   zIndex: 1,
   paddingTop: "100px",
+  transition: transition.theme,
 });
 
 const RootLayoutContainer = ({ children }: { children: any }) => {
