@@ -139,7 +139,7 @@ const HomePage = () => {
                 strokeWidth={5}
               >
                 <span className={Graduate_Font.className}>
-                  FRONTEND DEVELOPER
+                  LEAD WEB DEVELOPER
                 </span>
               </RoughNotation>
             </div>

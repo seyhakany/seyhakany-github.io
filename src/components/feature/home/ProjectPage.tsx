@@ -7,6 +7,10 @@ import BQuest from "/public/images/projects/bquest.svg";
 import KhmerCare from "/public/images/projects/khmer-care.svg";
 import Stars from "/public/images/projects/stars.png";
 import Image from "next/image";
+import PathmazingAcademy from "/public/images/projects/PathmazingAcademy.png";
+import VIPSPORT from "/public/images/projects/VIPSPORT.png";
+
+
 import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 import colorVariables, { transition } from "@/style/variables";
 import useResize from "@/hooks/use-window-resize";
@@ -14,6 +18,27 @@ import CustomButton from "@/components/common/CustomButton";
 import Title from "@/components/common/Title";
 
 const projects = [
+  {
+    // name: "Project A",
+    name: "Pathmazing Academy",
+    img: PathmazingAcademy,
+    description: `Join our transformative training program to enhance your skills for the future, expand your professional network, and increase your value in the job market. We offer more than just professional training; we're here to help you become your best self.`,
+    year: "2024",
+  },
+  {
+    // name: "Project A",
+    name: "VIPSPORT",
+    img: VIPSPORT,
+    description: `A VIP gateway offering exclusive and privileged access for sports fans and enthusiasts to join NOCC sports events, non-sport events, and other collaborative events.`,
+    year: "2024",
+  },
+  {
+    // name: "Project A",
+    name: "STARS (Landing)",
+    img: Stars,
+    description: `STARS By Pathmazing is an innovative employee engagement app, specializes in innovative gamification and HR solutions, with the aim of elevating employee experience across enterprises to a new height.`,
+    year: "2024",
+  },
   {
     // name: "Project A",
     name: "GMS and TMS",
@@ -35,7 +60,7 @@ const projects = [
     year: "2022",
   },
   {
-    name: "Stars",
+    name: "Stars (Portal)",
     img: Stars,
     description: `Is an HR tool that increases the engagement level of employees through timely recognition by giving out rewards. This reward​ program is intended to recognize and motivate staff by awarding "Stars"​similar to any loyalty​ program. These​ "Stars" are typically awarded by managers, however, given its flexibility, other staff members may award “Stars” as well - designed to mimic a 360-degree feedback mechanism. Staff members may use their earned or rewarded "Stars" to bid in an auction or redeem rewards via an integrated catalog of prizes.`,
     year: "2019",
@@ -206,6 +231,7 @@ const ProjectPage = () => {
                         </div>
                         <p>{project?.description}</p>
                       </div>
+                      
                       <div
                         className="year-badge"
                         style={{

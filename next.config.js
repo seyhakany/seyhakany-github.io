@@ -5,7 +5,7 @@ const nextConfig = {
     styledComponents: true,
   },
   // !!! for production only
-  output: "export",
+  // output: "export",
   webpack: (config, options) => {
     config.module.rules.push({
       test: /\.pdf$/i,
