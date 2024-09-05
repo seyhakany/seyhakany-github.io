@@ -7,6 +7,9 @@ import BQuest from "/public/images/projects/bquest.svg";
 import KhmerCare from "/public/images/projects/khmer-care.svg";
 import Stars from "/public/images/projects/stars.png";
 import Image from "next/image";
+import PathmazingAcademy from "/public/images/projects/PathmazingAcademy.png";
+import VIPSPORT from "/public/images/projects/VIPSPORT.png";
+
 import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 import colorVariables, { transition } from "@/style/variables";
 import useResize from "@/hooks/use-window-resize";
@@ -14,6 +17,30 @@ import CustomButton from "@/components/common/CustomButton";
 import Title from "@/components/common/Title";
 
 const projects = [
+  {
+    // name: "Project A",
+    name: "Pathmazing Academy",
+    img: PathmazingAcademy,
+    description: `Join our transformative training program to enhance your skills for the future, expand your professional network, and increase your value in the job market. We offer more than just professional training; we're here to help you become your best self.`,
+    year: "2024",
+    live: "https://pathmazingacademy.com/km",
+  },
+  {
+    // name: "Project A",
+    name: "VIPSPORT",
+    img: VIPSPORT,
+    description: `A VIP gateway offering exclusive and privileged access for sports fans and enthusiasts to join NOCC sports events, non-sport events, and other collaborative events.`,
+    year: "2024",
+    live: "https://vipsports.com.kh/",
+  },
+  {
+    // name: "Project A",
+    name: "STARS (Landing)",
+    img: Stars,
+    description: `STARS By Pathmazing is an innovative employee engagement app, specializes in innovative gamification and HR solutions, with the aim of elevating employee experience across enterprises to a new height.`,
+    year: "2024",
+    live: "https://starsreward.com/en",
+  },
   {
     // name: "Project A",
     name: "GMS and TMS",
@@ -27,15 +54,17 @@ const projects = [
     img: BQuest,
     description: `BQuest is A New Do-It-Yourself Estate Planning Tool That is A Digital Way To Ensure The Things You Value Will Legally Make It Into The Right Hands After You’re Gone. With BQuest, You Can Catalog Your Possessions Into A Secure Digital Vault Which Automatically Updates Your Estate Summary, Your Letter Of Wishes, Your Will, Or Your Declaration Of Trust. Update It At Anytime.`,
     year: "2022",
+    live: "https://bquest.io/",
   },
   {
     name: "KhmerCare",
     img: KhmerCare,
     description: `Cambodia's first crowdfunding platform! Help support local causes and the people you love from near and far. KhmerCare is a trusted and fully transparent system created to simplify making an immediate impact on people's lives.`,
     year: "2022",
+    live: "https://khmercare.com/",
   },
   {
-    name: "Stars",
+    name: "Stars (Portal)",
     img: Stars,
     description: `Is an HR tool that increases the engagement level of employees through timely recognition by giving out rewards. This reward​ program is intended to recognize and motivate staff by awarding "Stars"​similar to any loyalty​ program. These​ "Stars" are typically awarded by managers, however, given its flexibility, other staff members may award “Stars” as well - designed to mimic a 360-degree feedback mechanism. Staff members may use their earned or rewarded "Stars" to bid in an auction or redeem rewards via an integrated catalog of prizes.`,
     year: "2019",
@@ -79,6 +108,7 @@ const StyledProject = styled("div")((props) => {
     border: `1px solid ${
       mode === "dark" ? colorVariables.dark_charcoal : colorVariables.gray67
     }`,
+    cursor: 'auto !important',
     justifyContent: "space-between",
     position: "relative",
     transition: transition.theme,
@@ -133,15 +163,26 @@ const StyledProject = styled("div")((props) => {
       },
     },
 
-    "& .year-badge": {
+    "& .activities-container": {
       position: "absolute",
       bottom: 0,
       height: 25,
-      background: colorVariables.error,
-      padding: "0 15px",
+      width: "100%",
       display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
+      gap: 10,
+
+      "& .year-badge": {
+        background: colorVariables.success,
+        padding: "0 15px",
+      },
+      "& .live-badge": {
+        background: colorVariables.error,
+        padding: "0 15px",
+        textDecoration: 'none',
+        color: 'white',
+        cursor: 'pointer'
+      },
+      
     },
   };
 });
@@ -188,7 +229,7 @@ const ProjectPage = () => {
                       </div>
                       <div
                         style={{
-                          textAlign: checkIndex(index) ? "start" : "end",
+                          justifyContent: checkIndex(index) ? "start" : "end",
                           padding:
                             width < 580 ? "0 20px 0 20px" : "0 75px 0 75px",
                         }}
@@ -206,14 +247,20 @@ const ProjectPage = () => {
                         </div>
                         <p>{project?.description}</p>
                       </div>
+
                       <div
-                        className="year-badge"
+                        className="activities-container"
                         style={{
-                          left: checkIndex(index) ? "unset" : 0,
-                          right: checkIndex(index) ? 0 : "unset",
+                          // left: checkIndex(index) ? "unset" : 0,
+                          // right: checkIndex(index) ? 0 : "unset",
+                          justifyContent: checkIndex(index) ? 'end' : "start",
                         }}
                       >
-                        {project?.year}
+                        <div className="year-badge">{project?.year}</div>
+                        {project.live ? (
+
+                        <a className="live-badge" href={project?.live} target="_blank">LIVE</a>
+                        ): null}
                       </div>
                     </StyledProject>
                   </CustomButton>

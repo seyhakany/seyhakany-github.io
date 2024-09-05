@@ -14,7 +14,7 @@ const experiences = [
   {
     position: `Intern, 
     Junior Web Developer, 
-    Senior Web Developer (present)`,
+    Senior Web Developer, Lead Web Developer (present)`,
     date: "Sep 2019 - Present",
     company: "Pathmazing Inc",
     detail: ["coding", "testing", "deploying"],
@@ -84,7 +84,7 @@ const AboutPage = () => {
   return (
     <div id="about" style={{ fontWeight: 600 }}>
       <Title>About Me</Title>
-      <p>{`Meticulous Web Developer with over 5 years of front-end experience and passion for responsive website design.`}</p>
+      <p>{`Meticulous Web Developer with over 6 years of front-end experience and passion for responsive website design.`}</p>
       <div>
         <div>Education:</div>
         <div style={{ marginBottom: "10px" }}>
